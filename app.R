@@ -9,6 +9,9 @@ ui <- fluidPage(
   theme = shinytheme("readable"), #journal readable
   #h2("Identify  artemisinin resistance from parasite clearance half-life data"), #this has been put inside the tabs
   
+  # -- Add Tracking JS File 
+  tags$head(includeScript("google-analytics.js")),
+  
   tabsetPanel(
     id="panels",
     tabPanel(title = strong("Introduction"),
@@ -250,7 +253,7 @@ ui <- fluidPage(
                tags$li(a(href="http://bit.ly/White-2015-code","Source code of the original model"),"by White et al. (2015)"),
                tags$li(a(href="http://www.who.int/malaria/publications/atoz/update-artemisinin-resistance-october2016/en/","WHO updates on artemisinin resistance")),
                tags$li(a(href="http://bit.ly/2d4hV7V","Parasite Clearance Estimator"),"(PCE)"),
-               tags$li("Published paper for this web application: submitted"),
+               tags$li(a(href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0177840","Published paper for this web application")),
                tags$li(a(href="http://bit.ly/White-2015-shiny-code","Source code"),"for this web application")
              ),
              hr(),
